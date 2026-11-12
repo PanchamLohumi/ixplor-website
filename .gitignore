@@ -1,0 +1,15 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.claude/
+
+# Never commit app builds; publish them as GitHub Release assets instead
+*.apk
+*.aab
+*.ipa
+
+# Secrets and local tooling
+.env
+.env.*
+node_modules/
