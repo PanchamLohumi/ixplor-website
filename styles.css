@@ -114,7 +114,7 @@ p { margin: 0; }
 /* In-app UI pieces drawn inside the mockups (illustrative, dummy data) */
 .ui-top { display: flex; align-items: center; justify-content: space-between; padding: 38px 16px 8px; }
 .ui-logo { display: flex; align-items: center; gap: 8px; }
-.ui-logo i { width: 26px; height: 26px; border-radius: 8px; background: url("assets/adaptive-icon.png") center/cover; display: block; }
+.ui-logo i { width: 26px; height: 26px; border-radius: 8px; background: url("assets/logo-128.webp") center/cover; display: block; }
 .ui-logo b { font: 800 16px/1 var(--font-head); }
 .ui-logo small { display: block; color: var(--teal); font-weight: 700; font-size: 9px; letter-spacing: .08em; margin-top: 3px; }
 .ui-hello { display: flex; align-items: center; gap: 8px; text-align: right; }
