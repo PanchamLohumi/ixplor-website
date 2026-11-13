@@ -1,0 +1,9 @@
+{
+  "android": {
+    "latestVersionCode": 1,
+    "minVersionCode": 1,
+    "versionName": "1.0.0",
+    "url": "https://github.com/PanchamLohumi/ixplor-website/releases/latest/download/iXplor-Beta.apk",
+    "notes": "First public beta."
+  }
+}
