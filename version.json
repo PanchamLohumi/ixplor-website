@@ -1,9 +1,9 @@
 {
   "android": {
-    "latestVersionCode": 1,
+    "latestVersionCode": 3,
     "minVersionCode": 1,
-    "versionName": "1.0.0",
+    "versionName": "1.1.0",
     "url": "https://github.com/PanchamLohumi/ixplor-website/releases/latest/download/iXplor-Beta.apk",
-    "notes": "First public beta."
+    "notes": "Pick your traveller tags, add places you've already been, see how alike you are with other explorers, and claim your Founding Explorer number."
   }
 }
