@@ -144,6 +144,27 @@ p { margin: 0; }
 .ui-btns .purple { background: #6A1FB0; }
 .ui-pick { border-color: var(--violet); background: rgba(155, 107, 255, .14); }
 .ui-pick .ui-title { color: #D9C6FF; }
+.ui-pick-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.ui-pick-head b { display: block; color: #D9C6FF; font: 900 12px/1.2 var(--font-head); }
+.ui-pick-head small { display: block; color: var(--muted); font-size: 9.5px; margin-top: 2px; }
+.ui-pick-head span { color: var(--faint); font-weight: 800; font-size: 11px; }
+/* Trip Mode: a gold card, like the app's trip card and trip stamps */
+.ui-trip { border-color: rgba(255, 201, 60, .55); background: rgba(255, 201, 60, .07); }
+.ui-trip .ui-label { color: var(--gold); }
+.ui-trip-dates { color: var(--gold); font: 800 12px/1 var(--font-body); margin-left: 6px; }
+/* The archetype journey: Gokarna -> Kaza -> Kasol */
+.ui-arc { display: flex; flex-direction: column; margin-top: 10px; }
+.ui-arc-step { position: relative; display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding-bottom: 12px; }
+.ui-arc-step:last-child { padding-bottom: 0; }
+.ui-arc-step:not(:last-child)::before { content: ""; position: absolute; left: 14px; top: 30px; bottom: 0; width: 2px; background: linear-gradient(var(--teal), var(--gold)); opacity: .6; }
+.ui-arc-step em { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 15px; background: rgba(255, 255, 255, .07); border: 1px solid var(--line); }
+.ui-arc-step small { display: block; color: rgba(255, 255, 255, .55); font-size: 8.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.ui-arc-step b { display: block; font: 800 13px/1.2 var(--font-head); margin-top: 2px; }
+.ui-arc-step span { display: block; color: var(--muted); font-size: 10px; margin-top: 1px; }
+.ui-arc-step.now em { background: rgba(255, 201, 60, .18); border-color: var(--gold); }
+.ui-arc-step.now b { color: var(--gold); }
+.ui-arc-step.next em { border-style: dashed; border-color: var(--pink); }
+.ui-arc-step.next b { color: #FF8FB5; }
 .ui-place { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
 .ui-place b { font-size: 13px; }
 .ui-rating { font-size: 10px; font-weight: 800; color: var(--gold); background: rgba(255, 255, 255, .06); padding: 4px 7px; border-radius: 8px; }
@@ -153,13 +174,13 @@ p { margin: 0; }
 .ui-bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; margin-top: 8px; }
 .ui-legend { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 6px; color: var(--muted); font-size: 10px; }
 .ui-legend i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; }
-.ui-match { color: var(--teal); font-weight: 800; font-size: 11px; }
+.ui-match { color: var(--teal); font-weight: 800; font-size: 11px; white-space: nowrap; }
 .ui-person { display: flex; align-items: center; gap: 10px; }
 .ui-person { padding: 9px 10px; }
-.ui-person .ui-avatar { width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; }
+.ui-person .ui-avatar { width: 36px; height: 36px; font-size: 14px; flex: 0 0 36px; }
 .ui-person div { flex: 1; min-width: 0; }
 .ui-person b { display: block; font-size: 13px; }
-.ui-person small { display: block; color: var(--teal); font-weight: 700; font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ui-person small { display: block; color: var(--teal); font-weight: 700; font-size: 10px; line-height: 1.3; overflow-wrap: normal; }
 .ui-person small + small { color: var(--faint); font-weight: 600; }
 .ui-heart { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; font-size: 16px; }
 .ui-heart.off { border: 1.5px solid var(--pink); color: var(--pink); }
@@ -220,6 +241,7 @@ p { margin: 0; }
 .ui-print svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ui-print .cap { position: absolute; left: 12px; right: 12px; bottom: 12px; }
 .ui-print .cap b { font: 900 18px/1.1 var(--font-head); display: block; }
+.ui-print .cap .ui-route { display: block; color: var(--teal); font-size: 10px; font-weight: 700; margin-top: 4px; }
 
 /* ---------- Story chapters ---------- */
 .section { padding: 96px 0; }

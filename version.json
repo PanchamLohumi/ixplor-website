@@ -1,9 +1,9 @@
 {
   "android": {
-    "latestVersionCode": 3,
+    "latestVersionCode": 4,
     "minVersionCode": 1,
-    "versionName": "1.1.0",
+    "versionName": "1.2.0",
     "url": "https://github.com/PanchamLohumi/ixplor-website/releases/latest/download/iXplor-Beta.apk",
-    "notes": "Pick your traveller tags, add places you've already been, see how alike you are with other explorers, and claim your Founding Explorer number."
+    "notes": "Trip Mode is here: plan a trip, see who'll be there on your dates, and earn gold trip stamps. Plus clearer picks on Explore, and text that fits every screen."
   }
 }
