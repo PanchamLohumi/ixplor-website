@@ -23,6 +23,7 @@
     <div class="wrap">
       <a class="brand" href="#top"><img src="assets/logo-128.webp" alt="" width="38" height="38" fetchpriority="high"><span>iXplor</span></a>
       <nav class="nav-links" aria-label="Sections">
+        <a href="#film">The film</a>
         <a href="#story">How it works</a>
         <a href="#features">Features</a>
         <a href="#safety">Safety</a>
@@ -48,54 +49,28 @@
           <p class="hero-note">Free · Android first · iPhone coming soon</p>
         </div>
 
-        <div class="phone float" aria-label="The iXplor Home screen in Kaza, Spiti: weather, the vibe check, nearby spots and the place briefing">
-          <div class="notch"></div>
-          <div class="screen">
-            <div class="ui-top"><div class="ui-logo"><i></i><div><b>iXplor</b><small>📍 KAZA</small></div></div><div class="ui-hello"><span>Welcome!<b>Aanya</b></span><div class="ui-avatar">A</div></div></div>
-            <div class="ui-body ui-feed-window">
-              <div class="ui-feed">
-                <div class="ui-drop-head">
-                  <div><div class="ui-label">The Drop 📍</div><div class="ui-drop-title">You are in Kaza.</div></div>
-                  <span class="ui-save-circle">🤍</span>
-                </div>
-                <div class="ui-grid2">
-                  <div class="ui-info"><span>Country &amp; region</span><b class="sm">India, Himachal Pradesh</b></div>
-                  <div class="ui-info"><span>Topography</span><b class="sm">High-altitude cold desert on the Spiti river</b></div>
-                  <div class="ui-info"><span>Elevation</span><b>3,650m</b></div>
-                  <div class="ui-info"><span>Local time</span><b>12:40 PM</b><small>Today</small></div>
-                </div>
-                <div class="ui-card">
-                  <div class="ui-wx">
-                    <div>
-                      <span class="ui-cap">Today's weather</span>
-                      <div class="ui-temp">6°C</div>
-                      <div class="ui-cond">Clear sky, windy</div>
-                      <p class="ui-wxvibe">Thin air, hard sun, icy wind. Layer up, and keep the sunscreen close.</p>
-                    </div>
-                    <span class="ui-wxicon">☀️</span>
-                  </div>
-                  <div class="ui-forecast"><div><span class="ui-cap">Tomorrow</span><em>☀️</em><b>7°C</b></div><div><span class="ui-cap">Sat</span><em>🌤️</em><b>5°C</b></div></div>
-                  <div class="ui-credit">Weather data by open-meteo.com</div>
-                </div>
-                <div class="ui-vibe">
-                  <div class="ui-label">The Vibe Check ✨</div>
-                  <p class="ui-vibe-sum">Prayer flags, bare brown peaks and the loudest silence you've heard.</p>
-                  <p class="ui-story">Prayer flags snap above the Spiti river while a shared taxi to Kibber idles by the market and butter tea steams in a café window.</p>
-                  <div class="ui-swipe">Swipe to see more 👉</div>
-                  <div class="ui-carousel">
-                    <div class="ui-spot"><div class="ui-spot-top"><em>🛕</em><span>↗</span></div><b>Key Monastery</b><small>Ridge-top gompa</small></div>
-                    <div class="ui-spot"><div class="ui-spot-top"><em>🌉</em><span>↗</span></div><b>Chicham Bridge</b><small>Over a deep gorge</small></div>
-                  </div>
-                </div>
-                <div class="ui-card">
-                  <div class="ui-label gold">Place briefing</div>
-                  <p class="ui-brief">Spiti means "the middle land": a cold desert between Tibet and India, mostly above 3,500 m. Tabo Monastery, down the valley, has stood since 996 CE.</p>
-                </div>
-                <div class="ui-ai">✨ Written by AI · <u>Report</u></div>
-              </div>
-            </div>
-            <div class="ui-tabs"><span class="on" data-i="🏠">Home</span><span data-i="🔍">Explore</span><span data-i="📖">MyXplor</span><span data-i="🤝">CoXplor</span></div>
-          </div>
+        <div class="hero-film">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/film/ixplor-film-9x16-poster.jpg"
+                 aria-label="iXplor film: Aanya travels from Gokarna to Spiti and Kasol, finds Café Piti with the AI Pick, matches with a fellow explorer on CoXplor, and treks to Kheerganga">
+            <source src="assets/film/ixplor-film-9x16.mp4" type="video/mp4">
+          </video>
+          <button class="film-sound" type="button" aria-pressed="false">🔇 Tap for sound</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILM (16:9, larger screens) -->
+    <section class="section film" id="film">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">🎬 The film</div>
+          <h2>Find your kind of explorer</h2>
+          <p class="lead">Fifty seconds from Gokarna to Spiti to Kasol: an AI Pick at Café Piti, a match on CoXplor, and the trek to Kheerganga.</p>
+        </div>
+        <div class="film-frame reveal">
+          <video controls playsinline preload="none" poster="assets/film/ixplor-film-16x9-poster.jpg">
+            <source src="assets/film/ixplor-film-16x9.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
@@ -449,6 +424,35 @@
       window.addEventListener('load', measure);
       window.addEventListener('resize', measure);
     })();
+
+    // The hero film: muted autoplay loop. It pauses off-screen, and doesn't
+    // autoplay with Data Saver or reduced motion (the poster shows instead).
+    (function () {
+      var v = document.querySelector('.hero-film video');
+      if (!v) return;
+      var btn = document.querySelector('.film-sound');
+      var lite = (navigator.connection && navigator.connection.saveData) || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (lite) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; btn.hidden = true; return; }
+      btn.addEventListener('click', function () {
+        v.muted = !v.muted;
+        if (!v.muted) v.play().catch(function () {});
+        btn.textContent = v.muted ? '🔇 Tap for sound' : '🔊 Sound on';
+        btn.setAttribute('aria-pressed', String(!v.muted));
+      });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) v.play().catch(function () {}); else v.pause(); });
+        }, { threshold: 0.2 }).observe(v);
+      }
+    })();
+
+    // Only one film plays at a time.
+    document.querySelectorAll('video').forEach(function (vid) {
+      vid.addEventListener('play', function () {
+        document.querySelectorAll('video').forEach(function (other) { if (other !== vid && !other.muted) other.pause(); });
+        if (vid.closest('.film-frame')) { var hero = document.querySelector('.hero-film video'); if (hero) hero.pause(); }
+      });
+    });
 
     // Fade sections in as they scroll into view. Without JS (or with reduced
     // motion) everything is simply visible.
