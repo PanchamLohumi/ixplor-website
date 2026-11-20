@@ -344,10 +344,8 @@ p, li, summary { text-wrap: pretty; }
 .btn.is-disabled { opacity: .45; pointer-events: none; }
 @media (max-width: 900px) { .dl-cards { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; } }
 .dl-cards .tile p a { color: var(--teal); }
-.install { max-width: 620px; margin: 40px auto 0; text-align: left; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .08); border-radius: 18px; padding: 22px 24px; }
-.install h3 { margin: 0 0 10px; }
-.install ol { margin: 0 0 12px; padding-left: 20px; line-height: 1.7; }
-.install p { margin: 0; color: var(--faint); font-size: 14px; }
+.dl-cards .badge { align-self: flex-start; }
+@media (min-width: 901px) { .dl-cards.two { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-left: auto; margin-right: auto; } }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--faint); font-size: 14px; }
@@ -381,3 +379,16 @@ p, li, summary { text-wrap: pretty; }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--muted); }
 .doc th { color: var(--text); font-family: var(--font-head); }
 .doc .table-scroll { overflow-x: auto; }
+
+/* ---------- Join page: install through Google Play ---------- */
+.doc .join-steps { list-style: none; padding: 0; margin: 32px 0 8px; display: grid; gap: 14px; }
+.doc .join-step { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; margin: 0; }
+.join-num { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font: 900 20px/1 var(--font-head); color: var(--navy); background: linear-gradient(135deg, var(--teal), var(--gold)); }
+.doc .join-step h2 { color: var(--text); font-size: 20px; margin: 8px 0 6px; }
+.join-step p { color: var(--muted); }
+.join-step .btn { margin-top: 14px; }
+.doc.join .card h3 { margin-top: 0; }
+@media (max-width: 420px) {
+  .doc .join-step { grid-template-columns: 1fr; gap: 10px; }
+  .join-step .btn { width: 100%; }
+}
